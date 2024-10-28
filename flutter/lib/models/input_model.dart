@@ -558,6 +558,8 @@ class InputModel {
     // https://github.com/flutter/flutter/issues/157771
     final isKeyMatch =
         isIOS || isAndroid && e.logicalKey.debugName == e.physicalKey.debugName;
+    // Android does not support map mode for now.
+    // Because simulating the physical key events(uhid) which requires root permission is not supported.
     final isMobileAndPeerNotAndroid =
         isMobile && peerPlatform != kPeerPlatformAndroid;
     final isDesktopAndMapMode =
